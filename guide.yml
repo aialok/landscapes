@@ -1,0 +1,13 @@
+categories:
+  - category: "Adopters"
+    content: |
+      JSON Schema Specification is widely adopted for validating JSON data structures. It provides a vocabulary that allows you to annotate and validate JSON documents. JSON Schema is particularly useful in defining the structure of JSON data for APIs and other data exchange formats.
+
+    subcategories:
+      - subcategory: "JSON Schema Tools"
+        content: |
+          Tools that support JSON Schema are crucial for developers working with JSON data. These tools facilitate schema validation, generation, and manipulation, easing the process of working with JSON Schema in various environments.
+
+      - subcategory: "Integration with Development Environments"
+        content: |
+          Integration with popular development environments enhances developer productivity by providing features such as auto-completion, syntax highlighting, and validation directly within the IDE. Many IDEs offer plugins or built-in support for JSON Schema, enabling seamless integration into the development workflow.
