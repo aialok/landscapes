@@ -20,13 +20,30 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Run a build step here if your project requires
-      - name: Setup Rust
-        uses: actions-rust-lang/setup-rust-toolchain@v1
+      # Cache step to cache the installed crates
+      - name: Cache installed crates
+        uses: actions/cache@v2
+        with:
+          path: ~/.cargo
+          key: ${{ runner.os }}-crates-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-crates-
 
+      # Install Landscape2 and cache the installation
       - name: Install Landscape2
         run: |
           cargo install --git https://github.com/cncf/landscape2
+        if: steps.cache.outputs.cache-hit != 'true'
+
+      # Cache step to cache the installed Landscape2 binary
+      - name: Cache Landscape2 binary
+        id: cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.cargo/bin/landscape2
+          key: ${{ runner.os }}-landscape2-${{ hashFiles('Cargo.toml') }}
+          restore-keys: |
+            ${{ runner.os }}-landscape2-
 
       - name: Build Landscape
         run: |
@@ -49,6 +66,5 @@ jobs:
           # Optional: Switch what branch you are publishing to.
           # By default this will be the branch which triggered this workflow
           branch: master
-
           # Optional: Change the Wrangler version, allows you to point to a specific version or a tag such as `beta`
           wranglerVersion: "3"

@@ -54,11 +54,11 @@ landscape:
             project: graduated
             repo_url: https://github.com/microsoft
 
-          - item:
-            crunchbase: https://www.crunchbase.com/organization/krakend
-            description: kickstartDS is the Open Source starter kit for Design Systems - A low-code framework, UI development toolkit and comprehensive component library enabling digital teams to create consistent and brand compliant web frontends super efficiently. Easy like squeeeeezing a lemon
-            homepage_url: https://www.kickstartds.com/
-            logo: kickstartds.svg
-            name: kickstartDS
-            project: graduated
-            repo_url: https://github.com/kickstartDS/kickstartDS
+          # - item:
+          #   crunchbase: https://www.crunchbase.com/organization/krakend
+          #   description: kickstartDS is the Open Source starter kit for Design Systems - A low-code framework, UI development toolkit and comprehensive component library enabling digital teams to create consistent and brand compliant web frontends super efficiently. Easy like squeeeeezing a lemon
+          #   homepage_url: https://www.kickstartds.com/
+          #   logo: kickstartds.svg
+          #   name: kickstartDS
+          #   project: graduated
+          #   repo_url: https://github.com/kickstartDS/kickstartDS
