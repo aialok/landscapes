@@ -22,7 +22,7 @@ jobs:
 
       # Cache step to cache the installed crates
       - name: Cache installed crates
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.cargo
           key: ${{ runner.os }}-crates-${{ hashFiles('**/Cargo.lock') }}
@@ -38,7 +38,7 @@ jobs:
       # Cache step to cache the installed Landscape2 binary
       - name: Cache Landscape2 binary
         id: cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.cargo/bin/landscape2
           key: ${{ runner.os }}-landscape2-${{ hashFiles('Cargo.toml') }}
