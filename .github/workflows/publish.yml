@@ -20,6 +20,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
       # Cache step to cache the installed crates
       - name: Cache installed crates
         uses: actions/cache@v4
@@ -53,6 +58,7 @@ jobs:
             --guide-file guide.yml \
             --logos-path logos \
             --output-dir build
+
 
       # - name: Publish to Cloudflare Pages
       #   uses: cloudflare/pages-action@v1
