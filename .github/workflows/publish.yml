@@ -1,12 +1,12 @@
-name: Publish
+name: Publish 
 
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
   workflow_dispatch:
 
 jobs:
@@ -20,11 +20,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Install Landscape2 and cache the installation
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+     # Install Landscape2 
       - name: Install Landscape2
         run: |
           curl --proto '=https' --tlsv1.2 -LsSf https://github.com/cncf/landscape2/releases/download/v0.8.1/landscape2-installer.sh | sh
 
+     # Build Landscape
       - name: Build Landscape
         run: |
           landscape2 build \
@@ -34,18 +40,10 @@ jobs:
             --logos-path logos \
             --output-dir build
 
-      - name: Publish to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
+      - name: Deploying to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: landscapes
-          directory: build
-          # Optional: Enable this if you want to have GitHub Deployments triggered
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          # Optional: Switch what branch you are publishing to.
-          # By default this will be the branch which triggered this workflow
-          branch: master
-          # Optional: Change the Wrangler version, allows you to point to a specific version or a tag such as `beta`
-          wranglerVersion: "3"
+          command: pages deploy build --project-name=
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
