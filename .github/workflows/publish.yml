@@ -20,30 +20,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Cache step to cache the installed crates
-      - name: Cache installed crates
-        uses: actions/cache@v4
-        with:
-          path: ~/.cargo
-          key: ${{ runner.os }}-crates-${{ hashFiles('**/Cargo.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-crates-
-
       # Install Landscape2 and cache the installation
       - name: Install Landscape2
         run: |
           curl --proto '=https' --tlsv1.2 -LsSf https://github.com/cncf/landscape2/releases/download/v0.8.1/landscape2-installer.sh | sh
-        if: steps.cache.outputs.cache-hit != 'true'
-
-      # Cache step to cache the installed Landscape2 binary
-      - name: Cache Landscape2 binary
-        id: cache
-        uses: actions/cache@v4
-        with:
-          path: ~/.cargo/bin/landscape2
-          key: ${{ runner.os }}-landscape2-${{ hashFiles('Cargo.toml') }}
-          restore-keys: |
-            ${{ runner.os }}-landscape2-
 
       - name: Build Landscape
         run: |
@@ -68,3 +48,4 @@ jobs:
           branch: master
           # Optional: Change the Wrangler version, allows you to point to a specific version or a tag such as `beta`
           wranglerVersion: "3"
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
