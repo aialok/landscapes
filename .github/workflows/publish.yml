@@ -32,7 +32,7 @@ jobs:
       # Install Landscape2 and cache the installation
       - name: Install Landscape2
         run: |
-          cargo install --git https://github.com/cncf/landscape2
+          curl --proto '=https' --tlsv1.2 -LsSf https://github.com/cncf/landscape2/releases/download/v0.8.1/landscape2-installer.sh | sh
         if: steps.cache.outputs.cache-hit != 'true'
 
       # Cache step to cache the installed Landscape2 binary
