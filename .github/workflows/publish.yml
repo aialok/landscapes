@@ -42,8 +42,8 @@ jobs:
       - name: Setup Rust & Install Landscape2
         uses: actions-rust-lang/setup-rust-toolchain@v1
 
-      - name: Export Cargo Path
-        run: export PATH="$PATH:$HOME/.cargo/bin"
+      - name: Install Wasm
+        run: cargo install wasm-bindgen-cli
         
 
       - name: Install Landscapes
