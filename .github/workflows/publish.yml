@@ -25,30 +25,35 @@ jobs:
         with:
           node-version: 20
 
-      # Cache step to cache the installed crates
-      - name: Cache installed crates
-        uses: actions/cache@v4
-        with:
-          path: ~/.cargo
-          key: ${{ runner.os }}-crates-${{ hashFiles('**/Cargo.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-crates-
+      # # Cache step to cache the installed crates
+      # - name: Cache installed crates
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: ~/.cargo
+      #     key: ${{ runner.os }}-crates-${{ hashFiles('**/Cargo.lock') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-crates-
 
       # Install Landscape2 and cache the installation
-      - name: Install Landscape2
-        run: |
-          cargo install --git https://github.com/cncf/landscape2
-        if: steps.cache.outputs.cache-hit != 'true'
+      # - name: Install Landscape2
+      #   run: |
+      #     cargo install --git https://github.com/cncf/landscape2
+      #   if: steps.cache.outputs.cache-hit != 'true'
+      - name: Setup Rust & Install Landscape2
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+
+      - name: Install Landscapes
+        run: cargo install --git https://github.com/cncf/landscape2
 
       # Cache step to cache the installed Landscape2 binary
-      - name: Cache Landscape2 binary
-        id: cache
-        uses: actions/cache@v4
-        with:
-          path: ~/.cargo/bin/landscape2
-          key: ${{ runner.os }}-landscape2-${{ hashFiles('Cargo.toml') }}
-          restore-keys: |
-            ${{ runner.os }}-landscape2-
+      # - name: Cache Landscape2 binary
+      #   id: cache
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: ~/.cargo/bin/landscape2
+      #     key: ${{ runner.os }}-landscape2-${{ hashFiles('Cargo.toml') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-landscape2-
 
       - name: Build Landscape
         run: |
