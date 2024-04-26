@@ -42,6 +42,10 @@ jobs:
       - name: Setup Rust & Install Landscape2
         uses: actions-rust-lang/setup-rust-toolchain@v1
 
+      - name: Export Cargo Path
+        run: export PATH="$PATH:$HOME/.cargo/bin"
+        
+
       - name: Install Landscapes
         run: cargo install --git https://github.com/cncf/landscape2
 
