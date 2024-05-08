@@ -9,7 +9,7 @@
 #
 # foundation: <FOUNDATION_NAME>
 #
-foundation: JSON-Schema-Organization
+foundation: JSON Schema
 
 # Url (required)
 #
@@ -17,7 +17,7 @@ foundation: JSON-Schema-Organization
 #
 # url: <LANDSCAPE_URL>
 #
-url: http://127.0.0.1:8000
+url: https://landscape.json-schema.org
 
 # Analytics (optional)
 #
@@ -131,18 +131,13 @@ featured_items:
 #
 footer:
   links:
-    facebook: "https://www.facebook.com/CloudNativeComputingFoundation/"
-    flickr: "https://www.flickr.com/photos/143247548@N03/albums"
-    github: "https://github.com/cncf"
-    homepage: "https://cncf.io"
-    instagram: "https://www.instagram.com/humans.of.cloudnative/"
-    linkedin: "https://www.linkedin.com/company/cloud-native-computing-foundation/"
-    slack: "https://slack.cncf.io/"
-    twitch: "https://www.twitch.tv/cloudnativefdn"
-    twitter: "https://twitter.com/cloudnativefdn"
-    wechat: "https://www.cncf.io/wechat/"
-    youtube: "https://www.youtube.com/c/cloudnativefdn"
-  logo: "https://avatars.githubusercontent.com/u/13019229?s=200&v=4"
+    github: "https://github.com/json-schema-org"
+    homepage: "https://json-schema.org/"
+    linkedin: "https://linkedin.com/company/jsonschema/"
+    slack: "https://json-schema.org/slack"
+    twitter: "https://twitter.com/jsonschema"
+    youtube: "https://www.youtube.com/@JSONSchemaOrgOfficial"
+  logo: "https://json-schema.org/img/logos/logo-white.svg"
 
 # Grid items size (optional)
 #
@@ -174,6 +169,17 @@ groups:
   - name: JSON Schema Ecosystem
     categories:
       - Adopters
+      - Sponsors
+      - Tools
+  - name: Adopters
+    categories:
+      - Adopters
+  - name: Sponsors
+    categories:
+      - Sponsors
+  - name: Tools
+    categories:
+      - Tools
 
 # Header (optional)
 #
@@ -186,7 +192,7 @@ groups:
 #
 header:
   links:
-    github: "https://github.com/cncf/landscape2"
+    github: "https://github.com/json-schema-org/landscape"
   logo: "https://json-schema.org/img/logos/logo-blue.svg"
 
 # Images (optional)

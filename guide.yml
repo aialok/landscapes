@@ -1,13 +1,20 @@
 categories:
-  - category: "Adopters"
+  - category: "Introduction"
     content: |
-      JSON Schema Specification is widely adopted for validating JSON data structures. It provides a vocabulary that allows you to annotate and validate JSON documents. JSON Schema is particularly useful in defining the structure of JSON data for APIs and other data exchange formats.
+        This is a living segmentation of the evolving JSON Schema Ecosystem. Its creation was inspired by by the amazing work done with different CNCF landscapes and the [Landscape2 project](https://github.com/cncf/landscape2).
 
+        This first iteration of the landscape focus on JSON Schema Adopters and Sponsors, however the JSON Schema is huge and we are just getting started to map organizations. 
+
+        If you have doubts, have a proposal to improve the JSON Schema Landscape or like to add your organization please create an issue ussing [this link](https://github.com/json-schema-org/landscape/issues/new/choose).
     subcategories:
-      - subcategory: "JSON Schema Tools"
+      - subcategory: "Adopters"
         content: |
-          Tools that support JSON Schema are crucial for developers working with JSON data. These tools facilitate schema validation, generation, and manipulation, easing the process of working with JSON Schema in various environments.
+           The JSON Schema Adopters is a directory that features organizations that have successfully implemented JSON Schema and shared their use case with the Community. It's your go-to place to discover how industry leaders use JSON Schema. Use this [link](https://github.com/json-schema-org/community/blob/main/ADOPTERS.md) to access the list or add your organization.
 
-      - subcategory: "Integration with Development Environments"
+      - subcategory: "Sponsors"
         content: |
-          Integration with popular development environments enhances developer productivity by providing features such as auto-completion, syntax highlighting, and validation directly within the IDE. Many IDEs offer plugins or built-in support for JSON Schema, enabling seamless integration into the development workflow.
+           These are the organizations supporting JSON Schema. If you are interested on becoming a JSON Schema Sponsor please visit our [sponsors page](https://json-schema.org/overview/sponsors) to see all the sponsor opportunities.
+
+      - subcategory: "Tools"
+        content: |
+           Discover amazing [JSON Schema tooling](https://json-schema.org/tools) to help your organization leverage the benefits of JSON Schema. Because JSON Schema is much more than a Specification, it is a vibrant ecosystem of Validators, Generators, Linters, and other JSON Schema Utilities made by this amazing Community.
