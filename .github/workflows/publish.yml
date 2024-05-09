@@ -30,7 +30,7 @@ jobs:
      # Build Landscape
       - name: Build Landscape
         env: 
-          GITHUB_TOKEN: ${{ secrets.AUTH_TOKEN }}
+          GITHUB_TOKENS: ${{ secrets.AUTH_TOKEN }}
           CRUNCHBASE_API_KEY: ${{ secrets.CRUNCHBASE_API_KEY }}
         run: |
           landscape2 build \
