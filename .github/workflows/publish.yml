@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
   workflow_dispatch:
 
 jobs:
@@ -49,4 +46,3 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy build --project-name=landscapes
-        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'  && github.ref == 'refs/heads/master'
