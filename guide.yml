@@ -1,5 +1,5 @@
 categories:
-  - category: "Introduction"
+  - category: Introduction
     content: |
         This is a living segmentation of the evolving JSON Schema Ecosystem. Its creation was inspired by by the amazing work done with different CNCF landscapes and the [Landscape2 project](https://github.com/cncf/landscape2).
 
@@ -7,14 +7,14 @@ categories:
 
         If you have doubts, have a proposal to improve the JSON Schema Landscape or like to add your organization please create an issue ussing [this link](https://github.com/json-schema-org/landscape/issues/new/choose).
     subcategories:
-      - subcategory: "Adopters"
+      - subcategory: Adopters
         content: |
            The JSON Schema Adopters is a directory that features organizations that have successfully implemented JSON Schema and shared their use case with the Community. It's your go-to place to discover how industry leaders use JSON Schema. Use this [link](https://github.com/json-schema-org/community/blob/main/ADOPTERS.md) to access the list or add your organization.
 
-      - subcategory: "Sponsors"
+      - subcategory: Sponsors
         content: |
            These are the organizations supporting JSON Schema. If you are interested on becoming a JSON Schema Sponsor please visit our [sponsors page](https://json-schema.org/overview/sponsors) to see all the sponsor opportunities.
 
-      - subcategory: "Tools"
+      - subcategory: Tools
         content: |
            Discover amazing [JSON Schema tooling](https://json-schema.org/tools) to help your organization leverage the benefits of JSON Schema. Because JSON Schema is much more than a Specification, it is a vibrant ecosystem of Validators, Generators, Linters, and other JSON Schema Utilities made by this amazing Community.
